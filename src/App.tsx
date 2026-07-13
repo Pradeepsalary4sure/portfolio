@@ -8,7 +8,7 @@ import Experience from "./sections/Experience/Experience";
 import Contact from "./sections/Contact/Contact";
 import Cursor from "./components/Cursor/Cursor";
 // import MouseGlow from "./components/background/MouseGlow";
-import SEO from "./components/SEO/SEO";
+import SEO from "./components/SEO/TempSEO";
 
 import Hero from "./sections/Hero/hero";
 import About from "./sections/About/about";
