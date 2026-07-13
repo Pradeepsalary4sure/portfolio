@@ -1,38 +1,21 @@
 import { Helmet } from "react-helmet-async";
 
+const SEO = () => {
+  return (
+    <Helmet>
+      <title>Pradeep | React Developer</title>
 
-const SEO =()=>{
-
-return(
-
-<Helmet>
-
-    <title>
-            Pradeep | Frontend Developer
-    </title>
-
-
-    <meta
+      <meta
         name="description"
-        content="
-        Frontend Developer specializing in React, Next.js, TypeScript, Finance Dashboard and Automation.
-        "
-    />
+        content="Pradeep Portfolio - React, Next.js, TypeScript Developer"
+      />
 
-
-    <meta
+      <meta
         name="keywords"
-        content="
-        React Developer, Next.js Developer, Frontend Developer, Loan CRM, Google Apps Script
-"
-    />
-
-
-</Helmet>
-
-)
-
-}
-
+        content="React, Next.js, TypeScript, Portfolio"
+      />
+    </Helmet>
+  );
+};
 
 export default SEO;

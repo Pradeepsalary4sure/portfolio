@@ -16,6 +16,7 @@ import Footer from "./sections/Footer/Footer";
 import ParticlesBackground from "./components/background/ParticleBackground";
 
 
+
 function App() {
   const [loading, setLoading] = useState(true);
 
