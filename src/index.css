@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* =========================
+   GLOBAL RESET
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+
+html{
+  scroll-behavior:smooth;
+}
+
+
+body{
+
+  font-family: "Inter", sans-serif;
+
+  background:
+  radial-gradient(
+    circle at top left,
+    rgba(34,211,238,0.15),
+    transparent 35%
+  ),
+
+  radial-gradient(
+    circle at bottom right,
+    rgba(168,85,247,0.12),
+    transparent 35%
+  ),
+
+  #050816;
+
+
+  color:white;
+
+  overflow-x:hidden;
+
+}
+
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar{
+  width:8px;
+}
+
+
+::-webkit-scrollbar-track{
+  background:#050816;
+}
+
+
+::-webkit-scrollbar-thumb{
+  background:#22d3ee;
+  border-radius:20px;
+}
+
+
+
+/* =========================
+   TEXT SELECTION
+========================= */
+
+
+::selection{
+
+  background:#22d3ee;
+  color:#020617;
+
+}
+
+
+/* =========================
+   LINKS
+========================= */
+
+
+a{
+  text-decoration:none;
+}
+
+
+/* =========================
+   GLASS EFFECT
+========================= */
+
+
+.glass{
+
+  background:rgba(255,255,255,0.05);
+
+  backdrop-filter:blur(20px);
+
+  border:1px solid rgba(34,211,238,0.2);
+
+}
+
+body{
+  cursor:none;
+}
+
+
+a,button{
+  cursor:none;
+}
+
+/* EXPERIENCE GLOW */
+
+#experience{
+
+position:relative;
+
+}
+
+#experience::before{
+
+content:"";
+
+position:absolute;
+
+width:600px;
+height:600px;
+
+left:-250px;
+top:200px;
+
+background:#06b6d4;
+
+filter:blur(180px);
+
+opacity:.12;
+
+pointer-events:none;
+
+}
+
+#experience::after{
+
+content:"";
+
+position:absolute;
+
+width:500px;
+height:500px;
+
+right:-150px;
+bottom:150px;
+
+background:#8b5cf6;
+
+filter:blur(180px);
+
+opacity:.12;
+
+pointer-events:none;
+
+}
+
+html,
+body,
+#root{
+    width:100%;
+    min-height:100%;
+}
+
+body{
+    overflow-x:hidden;
+    background:#050816;
+}
+
+#particles{
+    position:fixed;
+    inset:0;
+    z-index:-10;
+}
+
+body {
+  background: radial-gradient(circle at top, #0f172a, #020617 70%);
+  overflow-x: hidden;
+}
