@@ -2,189 +2,241 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* =========================
    GLOBAL RESET
 ========================= */
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-
-html{
-  scroll-behavior:smooth;
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
-
-body{
-
+body {
   font-family: "Inter", sans-serif;
+  background: radial-gradient(
+      circle at top left,
+      rgba(34, 211, 238, 0.15),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(168, 85, 247, 0.12),
+      transparent 35%
+    ),
+    #050816;
 
-  background:
-  radial-gradient(
-    circle at top left,
-    rgba(34,211,238,0.15),
-    transparent 35%
-  ),
-
-  radial-gradient(
-    circle at bottom right,
-    rgba(168,85,247,0.12),
-    transparent 35%
-  ),
-
-  #050816;
-
-
-  color:white;
-
-  overflow-x:hidden;
-
+  color: white;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-
 
 /* =========================
    SCROLLBAR
 ========================= */
 
-::-webkit-scrollbar{
-  width:8px;
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
 
-
-::-webkit-scrollbar-track{
-  background:#050816;
+::-webkit-scrollbar-track {
+  background: #050816;
 }
 
-
-::-webkit-scrollbar-thumb{
-  background:#22d3ee;
-  border-radius:20px;
+::-webkit-scrollbar-thumb {
+  background: #22d3ee;
+  border-radius: 20px;
+  border: 2px solid #050816;
 }
 
+::-webkit-scrollbar-thumb:hover {
+  background: #06b6d4;
+}
 
+/* Mobile scrollbar optimization */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border: none;
+  }
+}
 
 /* =========================
    TEXT SELECTION
 ========================= */
 
-
-::selection{
-
-  background:#22d3ee;
-  color:#020617;
-
+::selection {
+  background: #22d3ee;
+  color: #020617;
 }
-
 
 /* =========================
    LINKS
 ========================= */
 
-
-a{
-  text-decoration:none;
+a {
+  text-decoration: none;
 }
-
 
 /* =========================
    GLASS EFFECT
 ========================= */
 
-
-.glass{
-
-  background:rgba(255,255,255,0.05);
-
-  backdrop-filter:blur(20px);
-
-  border:1px solid rgba(34,211,238,0.2);
-
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(34, 211, 238, 0.2);
 }
 
-body{
-  cursor:none;
+/* =========================
+   CURSOR
+========================= */
+
+body {
+  cursor: none;
 }
 
-
-a,button{
-  cursor:none;
+@media (max-width: 768px) {
+  body {
+    cursor: auto;
+  }
 }
 
-/* EXPERIENCE GLOW */
-
-#experience{
-
-position:relative;
-
+a,
+button {
+  cursor: none;
 }
 
-#experience::before{
-
-content:"";
-
-position:absolute;
-
-width:600px;
-height:600px;
-
-left:-250px;
-top:200px;
-
-background:#06b6d4;
-
-filter:blur(180px);
-
-opacity:.12;
-
-pointer-events:none;
-
+@media (max-width: 768px) {
+  a,
+  button {
+    cursor: auto;
+  }
 }
 
-#experience::after{
+/* =========================
+   EXPERIENCE SECTION GLOW
+========================= */
 
-content:"";
-
-position:absolute;
-
-width:500px;
-height:500px;
-
-right:-150px;
-bottom:150px;
-
-background:#8b5cf6;
-
-filter:blur(180px);
-
-opacity:.12;
-
-pointer-events:none;
-
+#experience {
+  position: relative;
 }
+
+#experience::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  left: -250px;
+  top: 200px;
+  background: #06b6d4;
+  filter: blur(180px);
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+#experience::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  right: -150px;
+  bottom: 150px;
+  background: #8b5cf6;
+  filter: blur(180px);
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+/* =========================
+   LAYOUT
+========================= */
 
 html,
 body,
-#root{
-    width:100%;
-    min-height:100%;
-}
-
-body{
-    overflow-x:hidden;
-    background:#050816;
-}
-
-#particles{
-    position:fixed;
-    inset:0;
-    z-index:-10;
+#root {
+  width: 100%;
+  min-height: 100%;
 }
 
 body {
-  background: radial-gradient(circle at top, #0f172a, #020617 70%);
   overflow-x: hidden;
+  background: #050816;
+}
+
+#particles {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+}
+
+/* =========================
+   PERFORMANCE OPTIMIZATION
+========================= */
+
+/* Hardware acceleration */
+section {
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  section {
+    will-change: auto;
+  }
+
+  /* Reduce animation complexity */
+  .motion-reduce {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* Better touch performance */
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Smooth scrolling on mobile */
+  body {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* =========================
+   SMOOTH SCROLL ENHANCEMENT
+========================= */
+
+/* Prevent layout shift from scrollbar */
+html {
+  overflow-y: scroll;
+}
+
+/* Smooth transitions for heavy animations */
+* {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
 }

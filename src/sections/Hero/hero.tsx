@@ -581,14 +581,14 @@ const Hero = () => {
 
 
 
-              <a
-                  href="/resume/Pradeep_Resume.pdf"
-                  download="Pradeep_Resume.pdf"
-                  >
-                    <Button primary>
-                      📄 Download Resume
-                  </Button>
-                </a>
+          <a
+            href="/resume/Pradeep_Resume.pdf"
+            download="Pradeep_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Download Resume
+          </a>
 
 
 
